@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: portfolio-v2
-          image: 'gscjr/portfolio-v2:20250403022127'
+          image: gscjr/portfolio-v2:20250403022541
           ports:
             - containerPort: 3000
           env:
