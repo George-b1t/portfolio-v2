@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Briefcase, Calendar, MapPin, ChevronRight } from 'lucide-react'
+import { Briefcase, Calendar, MapPin } from 'lucide-react'
 import { Badge } from "@/components/ui/badge"
 
 export default function Experience() {
@@ -89,7 +89,9 @@ export default function Experience() {
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">Work Experience</h2>
+          <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent">
+            Work Experience
+          </h2>
           <div className="h-1.5 w-24 bg-gradient-to-r from-primary to-primary/50 rounded-full mx-auto"></div>
           <p className="mt-4 text-muted-foreground max-w-2xl mx-auto">
             A timeline of my professional journey and key accomplishments
@@ -97,7 +99,7 @@ export default function Experience() {
         </motion.div>
 
         <div className="relative">
-          {/* Timeline line */}
+          {/* Linha da timeline */}
           <div className="absolute left-4 md:left-1/2 top-0 bottom-0 transform md:-translate-x-1/2 w-1 bg-gradient-to-b from-primary/80 via-primary/50 to-primary/20 rounded-full"></div>
 
           {experiences.map((exp, index) => (
@@ -113,10 +115,10 @@ export default function Experience() {
                   : "md:pl-16 md:ml-1/2"
               }`}
             >
-              {/* Timeline dot with pulse effect */}
+              {/* Ponto da timeline com efeito de pulsação */}
               <div className="absolute left-4 md:left-1/2 top-10 transform -translate-x-1/2 -translate-y-1/2 z-10">
-                <div className="w-6 h-6 rounded-full bg-primary shadow-glow"></div>
-                <div className="absolute inset-0 w-6 h-6 rounded-full bg-primary/30 animate-ping"></div>
+                <div className="w-4 h-4 rounded-full bg-primary"></div>
+                <div className="absolute inset-0 w-4 h-4 rounded-full bg-primary/30 animate-ping"></div>
               </div>
 
               <div 
@@ -127,11 +129,13 @@ export default function Experience() {
                   ml-10 md:ml-auto
                 `}
               >
-                {/* Decorative corner accent */}
+                {/* Accent decorativo */}
                 <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-primary/10 to-transparent rounded-bl-3xl"></div>
                 
                 <div className="relative z-10">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">{exp.title}</h3>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+                    {exp.title}
+                  </h3>
                   
                   <div className={`
                     flex flex-col md:flex-row items-start gap-3 text-muted-foreground mb-6
@@ -164,7 +168,10 @@ export default function Experience() {
                           ${index % 2 === 0 ? "md:flex-row-reverse md:text-right" : ""}
                         `}
                       >
-                        <ChevronRight className={`h-5 w-5 text-primary flex-shrink-0 mt-0.5 ${index % 2 === 0 ? "md:rotate-180" : ""}`} />
+                        {/* Substituindo a seta por um ponto */}
+                        <div className="mt-1 flex-shrink-0">
+                          <div className="w-2 h-2 rounded-full bg-primary"></div>
+                        </div>
                         <p>{resp}</p>
                       </motion.div>
                     ))}

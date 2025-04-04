@@ -64,8 +64,8 @@ export default function Skills() {
     },
   ]
 
-  // Animation variants
-  const container = {
+  // Animation variants para itens internos
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
@@ -78,7 +78,7 @@ export default function Skills() {
 
   return (
     <section className="py-24 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
-      {/* Decorative elements */}
+      {/* Elementos decorativos */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-primary/5 to-transparent"></div>
       <div className="absolute -top-40 -right-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
       <div className="absolute -bottom-40 -left-40 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
@@ -108,10 +108,10 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: skill.delay }}
               viewport={{ once: true, margin: "-100px" }}
-              whileHover={{ y: -5, transition: { duration: 0.2 } }}
-              className="bg-card rounded-xl border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+              whileHover={{ y: -2, transition: { duration: 0.2 } }}
+              className="bg-card rounded-xl border border-border/30 shadow-lg hover:shadow-lg transition-shadow duration-300 overflow-hidden"
             >
-              {/* Card header with gradient */}
+              {/* Cabeçalho do cartão com gradiente */}
               <div className={`bg-gradient-to-br ${skill.color} p-6 border-b border-border/20 relative`}>
                 <div className="absolute top-0 right-0 w-20 h-20 bg-white/5 rounded-bl-full"></div>
                 <div className="flex items-center">
@@ -120,7 +120,7 @@ export default function Skills() {
                 </div>
               </div>
 
-              {/* Card content */}
+              {/* Conteúdo do cartão */}
               <div className="p-6">
                 <motion.ul
                   className="space-y-3"
@@ -130,12 +130,16 @@ export default function Skills() {
                   viewport={{ once: true }}
                 >
                   {skill.items.map((item) => (
-                    <motion.li key={item} variants={item as unknown as Variants} className="flex items-center group">
+                    <motion.li
+                      key={item}
+                      variants={container}
+                      className="flex items-center group"
+                    >
                       <div className="relative">
-                        <div className="h-2.5 w-2.5 rounded-full bg-primary group-hover:bg-primary/70 transition-colors duration-300"></div>
+                        <div className="h-2.5 w-2.5 rounded-full bg-primary transition-colors duration-300 group-hover:bg-primary/70"></div>
                         <div className="absolute inset-0 h-2.5 w-2.5 rounded-full bg-primary/50 animate-ping opacity-0 group-hover:opacity-100"></div>
                       </div>
-                      <span className="ml-3 text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                      <span className="ml-3 text-muted-foreground transition-colors duration-300 group-hover:text-foreground">
                         {item}
                       </span>
                     </motion.li>
@@ -143,7 +147,7 @@ export default function Skills() {
                 </motion.ul>
               </div>
 
-              {/* Card footer */}
+              {/* Rodapé do cartão */}
               <div className="px-6 pb-6 pt-2">
                 <Badge
                   variant="outline"
@@ -156,7 +160,7 @@ export default function Skills() {
           ))}
         </div>
 
-        {/* Skills summary */}
+        {/* Resumo de skills */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -176,4 +180,3 @@ export default function Skills() {
     </section>
   )
 }
-

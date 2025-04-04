@@ -7,11 +7,11 @@ import {
   Calendar,
   BookOpen,
   MapPin,
-  ExternalLink,
   Coffee,
   Code,
   BookMarked,
   Brain,
+  UsersRound,
 } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -23,7 +23,8 @@ export default function Education() {
       institution: "UNIVERSIDADE TIRADENTES-UNIT",
       location: "ARACAJU, SERGIPE, BRASIL",
       period: "2021-01 - PRESENT",
-      description: "Focusing on software development, algorithms, data structures, and computer systems.",
+      description:
+        "Focusing on software development, algorithms, data structures, and computer systems.",
     },
   ]
 
@@ -32,7 +33,12 @@ export default function Education() {
       name: "Rocketseat ReactJS Ignite",
       date: "2022-01",
       issuer: "Rocketseat",
-      skills: ["React.js", "TypeScript", "State Management", "Performance"],
+      skills: [
+        "React.js",
+        "TypeScript",
+        "State Management",
+        "Performance",
+      ],
     },
     {
       name: "Rocketseat NodeJS Ignite",
@@ -44,13 +50,18 @@ export default function Education() {
       name: "Nasa Space Apps Challenger",
       date: "2023-10",
       issuer: "NASA",
-      skills: ["Problem Solving", "Innovation", "Teamwork", "Space Technology"],
+      skills: [
+        "Problem Solving",
+        "Innovation",
+        "Teamwork",
+        "Space Technology",
+      ],
     },
   ]
 
   const hobbies = [
     { name: "Coffee Exploration", icon: <Coffee className="h-5 w-5" /> },
-    { name: "Tech Communities", icon: <Code className="h-5 w-5" /> },
+    { name: "Tech Communities", icon: <UsersRound className="h-5 w-5" /> },
     { name: "Personal Projects", icon: <Code className="h-5 w-5" /> },
     { name: "Reading", icon: <BookMarked className="h-5 w-5" /> },
     { name: "Continuous Learning", icon: <Brain className="h-5 w-5" /> },
@@ -64,18 +75,22 @@ export default function Education() {
     "Community Engagement",
   ]
 
+  // Constante para delays base
+  const baseDelay = 0.3
+
   return (
     <section className="py-24 bg-gradient-to-b from-background to-muted/30 relative overflow-hidden">
-      {/* Decorative elements */}
+      {/* Elementos decorativos */}
       <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-bl-full opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-tr-full opacity-50"></div>
       <div className="absolute top-1/4 left-1/4 w-80 h-80 rounded-full bg-primary/5 blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
+        {/* Título da seção */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           viewport={{ once: true }}
           className="mb-16 text-center"
         >
@@ -89,13 +104,14 @@ export default function Education() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Left Column - Education & Hobbies */}
+          {/* Coluna Esquerda - Education & Hobbies */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.2 }}
+            transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             viewport={{ once: true }}
           >
+            {/* Cabeçalho da Educação */}
             <div className="flex items-center mb-8">
               <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-xl shadow-md mr-4">
                 <GraduationCap className="h-8 w-8 text-primary" />
@@ -110,12 +126,12 @@ export default function Education() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
+                transition={{ duration: 0.5, delay: baseDelay, ease: "easeOut" }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 className="mb-10"
               >
-                <Card className="overflow-hidden border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Card className="overflow-hidden border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="bg-gradient-to-r from-primary to-primary/80 p-6 text-primary-foreground relative">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-bl-full"></div>
                     <h4 className="text-2xl font-bold relative z-10">{edu.degree}</h4>
@@ -126,7 +142,7 @@ export default function Education() {
                         className="flex items-center text-foreground"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.4 }}
+                        transition={{ duration: 0.3, delay: baseDelay + 0.1, ease: "easeOut" }}
                         viewport={{ once: true }}
                       >
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
@@ -139,7 +155,7 @@ export default function Education() {
                         className="flex items-center text-muted-foreground"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.5 }}
+                        transition={{ duration: 0.3, delay: baseDelay + 0.2, ease: "easeOut" }}
                         viewport={{ once: true }}
                       >
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
@@ -152,7 +168,7 @@ export default function Education() {
                         className="flex items-center text-muted-foreground"
                         initial={{ opacity: 0, x: -10 }}
                         whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.3, delay: 0.6 }}
+                        transition={{ duration: 0.3, delay: baseDelay + 0.3, ease: "easeOut" }}
                         viewport={{ once: true }}
                       >
                         <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3">
@@ -165,7 +181,7 @@ export default function Education() {
                         className="mt-6 pt-6 border-t"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.7 }}
+                        transition={{ duration: 0.3, delay: baseDelay + 0.4, ease: "easeOut" }}
                         viewport={{ once: true }}
                       >
                         <p className="text-muted-foreground text-lg">{edu.description}</p>
@@ -175,7 +191,7 @@ export default function Education() {
                         className="mt-6 pt-6 border-t"
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.3, delay: 0.8 }}
+                        transition={{ duration: 0.3, delay: baseDelay + 0.5, ease: "easeOut" }}
                         viewport={{ once: true }}
                       >
                         <h5 className="font-semibold text-lg mb-4">Key Subjects</h5>
@@ -191,7 +207,7 @@ export default function Education() {
                               key={i}
                               initial={{ opacity: 0, scale: 0.8 }}
                               whileInView={{ opacity: 1, scale: 1 }}
-                              transition={{ duration: 0.2, delay: 0.9 + i * 0.05 }}
+                              transition={{ duration: 0.2, delay: baseDelay + 0.6 + i * 0.05, ease: "easeOut" }}
                               viewport={{ once: true }}
                             >
                               <Badge
@@ -210,6 +226,7 @@ export default function Education() {
               </motion.div>
             ))}
 
+            {/* Seção de Hobbies */}
             <div className="mt-12">
               <div className="flex items-center mb-8">
                 <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-xl shadow-md mr-4">
@@ -223,31 +240,30 @@ export default function Education() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
+                transition={{ duration: 0.5, delay: baseDelay + 0.3, ease: "easeOut" }}
                 viewport={{ once: true }}
-                whileHover={{ y: -5 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
               >
-                <Card className="overflow-hidden border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-300">
+                <Card className="overflow-hidden border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300">
                   <CardContent className="p-8">
                     <div className="flex flex-col space-y-6">
                       <p className="text-muted-foreground leading-relaxed text-lg">
-                        Exploring coffee shops and coworking spaces around the city; building personal software projects
-                        and engaging with tech communities.
+                        Exploring coffee shops and coworking spaces around the city; building personal software projects and engaging with tech communities.
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4">
                         {hobbies.map((hobby, i) => (
                           <motion.div
                             key={i}
-                            className="bg-gradient-to-br from-primary/10 to-transparent rounded-xl p-4 text-center border border-primary/10 group hover:border-primary/30 transition-all duration-300"
+                            className="bg-gradient-to-br from-primary/10 to-transparent rounded-xl p-4 text-center border border-primary/10 group transition-all duration-300"
                             initial={{ opacity: 0, y: 10 }}
                             whileInView={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.3, delay: 0.5 + i * 0.1 }}
+                            transition={{ duration: 0.3, delay: baseDelay + 0.4 + i * 0.1, ease: "easeOut" }}
                             viewport={{ once: true }}
                             whileHover={{ y: -3, transition: { duration: 0.2 } }}
                           >
                             <div className="flex flex-col items-center">
-                              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary/20 transition-colors duration-300">
+                              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-3 transition-colors duration-300 group-hover:bg-primary/20">
                                 {hobby.icon}
                               </div>
                               <span className="font-medium">{hobby.name}</span>
@@ -262,13 +278,14 @@ export default function Education() {
             </div>
           </motion.div>
 
-          {/* Right Column - Certifications & Continuous Learning */}
+          {/* Coluna Direita - Certifications & Continuous Learning */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.4 }}
+            transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             viewport={{ once: true }}
           >
+            {/* Cabeçalho de Certificações */}
             <div className="flex items-center mb-8">
               <div className="bg-gradient-to-br from-primary/20 to-primary/5 p-3 rounded-xl shadow-md mr-4">
                 <Award className="h-8 w-8 text-primary" />
@@ -284,11 +301,11 @@ export default function Education() {
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  transition={{ duration: 0.5, delay: baseDelay + index * 0.1, ease: "easeOut" }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -5 }}
+                  whileHover={{ y: -5, transition: { duration: 0.2 } }}
                 >
-                  <Card className="overflow-hidden border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-300 group">
+                  <Card className="overflow-hidden border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 group">
                     <div className="bg-gradient-to-r from-primary to-primary/70 p-6 text-primary-foreground flex justify-between items-center relative">
                       <div className="absolute top-0 right-0 w-24 h-24 bg-white/10 rounded-bl-full"></div>
                       <h4 className="text-xl font-bold relative z-10">{cert.name}</h4>
@@ -302,10 +319,10 @@ export default function Education() {
                           className="flex items-center text-foreground"
                           initial={{ opacity: 0, x: -10 }}
                           whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+                          transition={{ duration: 0.3, delay: baseDelay + 0.1 + index * 0.1, ease: "easeOut" }}
                           viewport={{ once: true }}
                         >
-                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3 group-hover:bg-primary/20 transition-colors duration-300">
+                          <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mr-3 transition-colors duration-300 group-hover:bg-primary/20">
                             <BookOpen className="h-5 w-5 text-primary" />
                           </div>
                           <span className="font-medium">Issuer: {cert.issuer}</span>
@@ -314,7 +331,7 @@ export default function Education() {
                         <motion.div
                           initial={{ opacity: 0, y: 10 }}
                           whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: 0.5 + index * 0.1 }}
+                          transition={{ duration: 0.3, delay: baseDelay + 0.2 + index * 0.1, ease: "easeOut" }}
                           viewport={{ once: true }}
                         >
                           <h5 className="font-semibold text-lg mb-4">Skills Acquired</h5>
@@ -324,34 +341,18 @@ export default function Education() {
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.2, delay: 0.6 + index * 0.1 + i * 0.05 }}
+                                transition={{ duration: 0.2, delay: baseDelay + 0.3 + index * 0.1 + i * 0.05, ease: "easeOut" }}
                                 viewport={{ once: true }}
                               >
                                 <Badge
                                   variant="outline"
-                                  className="bg-primary/5 border-primary/20 text-primary hover:bg-primary/10 px-3 py-1"
+                                  className="bg-primary/5 border-primary/20 text-primary hover:bg-primary/10 px-3 py-1 transition-colors duration-200"
                                 >
                                   {skill}
                                 </Badge>
                               </motion.div>
                             ))}
                           </div>
-                        </motion.div>
-
-                        <motion.div
-                          className="pt-4 mt-4 border-t flex justify-end"
-                          initial={{ opacity: 0, y: 10 }}
-                          whileInView={{ opacity: 1, y: 0 }}
-                          transition={{ duration: 0.3, delay: 0.7 + index * 0.1 }}
-                          viewport={{ once: true }}
-                        >
-                          <a
-                            href="#"
-                            className="text-primary flex items-center text-sm hover:underline group-hover:text-primary/80 transition-colors duration-300 bg-primary/5 hover:bg-primary/10 px-4 py-2 rounded-full"
-                          >
-                            <span>View Certificate</span>
-                            <ExternalLink className="ml-2 h-4 w-4" />
-                          </a>
                         </motion.div>
                       </div>
                     </CardContent>
@@ -363,12 +364,12 @@ export default function Education() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.8 }}
+              transition={{ duration: 0.5, delay: baseDelay + 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              whileHover={{ y: -5 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
               className="mt-12"
             >
-              <Card className="overflow-hidden border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-300 bg-gradient-to-br from-primary/10 to-transparent relative">
+              <Card className="overflow-hidden border border-border/30 shadow-lg hover:shadow-xl transition-all duration-300 bg-gradient-to-br from-primary/10 to-transparent relative">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-primary/5 rounded-bl-full"></div>
                 <div className="absolute bottom-0 left-0 w-40 h-40 bg-primary/5 rounded-tr-full"></div>
 
@@ -380,8 +381,7 @@ export default function Education() {
                     <h4 className="text-2xl font-bold">Continuous Learning</h4>
                   </div>
                   <p className="text-muted-foreground mb-8 text-lg">
-                    I{"'"}m committed to continuous learning and staying updated with the latest technologies and best
-                    practices in software development and cloud infrastructure.
+                    I&apos;m committed to continuous learning and staying updated with the latest technologies and best practices in software development and cloud infrastructure.
                   </p>
                   <div className="flex flex-wrap gap-3">
                     {continuousLearning.map((item, i) => (
@@ -389,13 +389,10 @@ export default function Education() {
                         key={i}
                         initial={{ opacity: 0, scale: 0.8 }}
                         whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.2, delay: 0.9 + i * 0.05 }}
+                        transition={{ duration: 0.2, delay: baseDelay + 0.9 + i * 0.05, ease: "easeOut" }}
                         viewport={{ once: true }}
                       >
-                        <Badge
-                          variant="secondary"
-                          className="bg-white/50 dark:bg-white/10 hover:bg-white/70 dark:hover:bg-white/20 transition-colors duration-300 px-4 py-1.5 text-base"
-                        >
+                        <Badge variant="secondary" className="px-4 py-1.5 text-base">
                           {item}
                         </Badge>
                       </motion.div>
@@ -410,4 +407,3 @@ export default function Education() {
     </section>
   )
 }
-

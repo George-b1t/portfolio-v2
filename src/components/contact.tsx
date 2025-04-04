@@ -156,38 +156,6 @@ export default function Contact() {
                     </motion.div>
                   ))}
                 </div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.8 }}
-                  viewport={{ once: true }}
-                  className="mt-8 pt-6 border-t"
-                >
-                  <p className="text-muted-foreground mb-4">
-                    I{"'"}m always open to discussing new projects, opportunities, or partnerships.
-                  </p>
-                  <div className="flex space-x-3">
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="rounded-full border-primary/20 text-primary hover:bg-primary/10 hover:text-primary"
-                      onClick={() => window.open("https://www.linkedin.com/in/george-soares-cj/", "_blank")}
-                    >
-                      <Linkedin className="h-4 w-4 mr-2" />
-                      LinkedIn
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="sm"
-                      className="rounded-full border-primary/20 text-primary hover:bg-primary/10 hover:text-primary"
-                      onClick={() => window.open("https://github.com/George-b1t", "_blank")}
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      GitHub
-                    </Button>
-                  </div>
-                </motion.div>
               </CardContent>
             </Card>
           </motion.div>

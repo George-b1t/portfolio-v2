@@ -51,7 +51,7 @@ export default function About() {
             viewport={{ once: true }}
             className="lg:col-span-2"
           >
-            <Card className="overflow-hidden border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-500 h-full">
+            <Card className="overflow-hidden border border-border/30 shadow-lg hover:shadow-lg transition-shadow duration-300 h-full">
               <div className="bg-gradient-to-r from-primary/20 to-primary/5 p-8 border-b relative">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full"></div>
                 <h3 className="text-2xl font-bold text-foreground relative z-10">Professional Summary</h3>
@@ -105,16 +105,16 @@ export default function About() {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0.4 + 0.1 * index }}
                       viewport={{ once: true }}
-                      className="flex space-x-4 group"
+                      className="flex space-x-4"
                     >
-                      <div className="flex-shrink-0 mt-1 transform group-hover:scale-110 transition-transform duration-300">
+                      <div className="flex-shrink-0 mt-1 transition-transform duration-300 group-hover:scale-105">
                         {item.icon}
                       </div>
                       <div>
-                        <h4 className="font-semibold text-lg mb-2 group-hover:text-primary transition-colors duration-300">
+                        <h4 className="font-semibold text-lg mb-2 transition-colors duration-300">
                           {item.title}
                         </h4>
-                        <p className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                        <p className="text-muted-foreground transition-colors duration-300">
                           {item.description}
                         </p>
                       </div>
@@ -155,7 +155,7 @@ export default function About() {
                       >
                         <Badge
                           variant="outline"
-                          className="bg-primary/5 hover:bg-primary/10 transition-all duration-300 text-sm py-1 px-3"
+                          className="bg-primary/5 transition-colors duration-300 text-sm py-1 px-3 hover:bg-primary/10"
                         >
                           {skill}
                         </Badge>
@@ -173,11 +173,11 @@ export default function About() {
             transition={{ duration: 0.7, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            <Card className="overflow-hidden border border-border/30 shadow-xl hover:shadow-2xl transition-all duration-500 h-full">
+            <Card className="overflow-hidden border border-border/30 shadow-lg hover:shadow-lg transition-shadow duration-300 h-full">
               <div className="bg-gradient-to-r from-primary to-primary/80 p-8 text-primary-foreground text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[url('/placeholder.svg?height=200&width=200')] opacity-10 bg-repeat"></div>
                 <div className="relative z-10">
-                  <div className="relative mx-auto h-36 w-36 rounded-full overflow-hidden border-4 border-primary-foreground/80 shadow-glow mb-6 transform hover:scale-105 transition-transform duration-300">
+                  <div className="relative mx-auto h-36 w-36 rounded-full overflow-hidden border-4 border-primary-foreground/80 shadow transition-transform duration-300 hover:scale-105 mb-6">
                     <Image
                       src="/FOTO_CHIP.jpeg?height=144&width=144"
                       alt="George Soares"
@@ -236,7 +236,7 @@ export default function About() {
                         viewport={{ once: true }}
                         className="group"
                       >
-                        <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/50 transition-colors duration-300">
+                        <div className="flex items-center space-x-3 p-3 rounded-lg hover:bg-muted/30 transition-colors duration-300">
                           <div className="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-primary/10 group-hover:bg-primary/20 transition-colors duration-300">
                             {item.icon}
                           </div>
@@ -251,7 +251,7 @@ export default function About() {
                                 {item.text}
                               </a>
                             ) : (
-                              <span className="text-muted-foreground group-hover:text-foreground transition-colors duration-300">
+                              <span className="text-muted-foreground transition-colors duration-300">
                                 {item.text}
                               </span>
                             )}
@@ -309,4 +309,3 @@ export default function About() {
     </section>
   )
 }
-

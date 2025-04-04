@@ -95,7 +95,7 @@ export default function Hero({ scrollToAbout }: HeroProps) {
             </motion.div>
 
             <motion.h1
-              className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text text-transparent"
+              className="text-5xl md:text-7xl font-bold mb-6 text-foreground"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
@@ -124,7 +124,7 @@ export default function Hero({ scrollToAbout }: HeroProps) {
               <Button
                 onClick={scrollToAbout}
                 size="lg"
-                className="rounded-full px-8 text-base font-medium shadow-lg hover:shadow-xl transition-all duration-300 bg-primary hover:bg-primary/90"
+                className="rounded-full px-8 text-base font-medium shadow transition-colors duration-200 bg-primary hover:bg-primary/80"
               >
                 Discover More
               </Button>
@@ -132,7 +132,7 @@ export default function Hero({ scrollToAbout }: HeroProps) {
               <Button
                 variant="outline"
                 size="lg"
-                className="rounded-full px-8 text-base font-medium border-primary/20 text-primary hover:bg-primary/10 transition-all duration-300"
+                className="rounded-full px-8 text-base font-medium border-primary/20 text-primary transition-colors duration-200"
                 onClick={() => window.open("https://github.com/George-b1t", "_blank")}
               >
                 View Projects
@@ -147,7 +147,7 @@ export default function Hero({ scrollToAbout }: HeroProps) {
             >
               {skills.map((skill, index) => (
                 <motion.div key={index} variants={item}>
-                  <Badge variant="outline" className="bg-muted/50 hover:bg-muted transition-colors duration-300">
+                  <Badge variant="outline" className="bg-muted/50 transition-colors duration-200">
                     {skill}
                   </Badge>
                 </motion.div>
@@ -226,7 +226,7 @@ export default function Hero({ scrollToAbout }: HeroProps) {
             size="icon"
             onClick={scrollToAbout}
             aria-label="Scroll down"
-            className="rounded-full h-12 w-12 border-primary/20 text-primary hover:bg-primary/10 hover:text-primary transition-all duration-300"
+            className="rounded-full h-12 w-12 border-primary/20 text-primary transition-colors duration-200"
           >
             <ArrowDown className="h-6 w-6" />
           </Button>
@@ -239,4 +239,3 @@ export default function Hero({ scrollToAbout }: HeroProps) {
     </section>
   )
 }
-
