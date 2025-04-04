@@ -133,7 +133,7 @@ export default function Hero({ scrollToAbout }: HeroProps) {
                 variant="outline"
                 size="lg"
                 className="rounded-full px-8 text-base font-medium border-primary/20 text-primary hover:bg-primary/10 transition-all duration-300"
-                onClick={() => window.open("https://github.com/georgesoares", "_blank")}
+                onClick={() => window.open("https://github.com/George-b1t", "_blank")}
               >
                 View Projects
               </Button>

@@ -220,8 +220,8 @@ export default function About() {
                       },
                       {
                         icon: <Github className="h-5 w-5 text-primary" />,
-                        text: "github.com/georgesoares",
-                        link: "https://github.com/georgesoares",
+                        text: "github.com/George-b1t",
+                        link: "https://github.com/George-b1t",
                       },
                       {
                         icon: <MapPin className="h-5 w-5 text-primary" />,

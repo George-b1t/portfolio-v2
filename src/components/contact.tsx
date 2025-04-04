@@ -73,8 +73,8 @@ export default function Contact() {
     {
       icon: <Github className="h-5 w-5 text-primary" />,
       label: "GitHub",
-      value: "github.com/georgesoares",
-      href: "https://github.com/georgesoares",
+      value: "github.com/George-b1t",
+      href: "https://github.com/George-b1t",
     },
   ]
 
@@ -181,7 +181,7 @@ export default function Contact() {
                       variant="outline"
                       size="sm"
                       className="rounded-full border-primary/20 text-primary hover:bg-primary/10 hover:text-primary"
-                      onClick={() => window.open("https://github.com/georgesoares", "_blank")}
+                      onClick={() => window.open("https://github.com/George-b1t", "_blank")}
                     >
                       <Github className="h-4 w-4 mr-2" />
                       GitHub
